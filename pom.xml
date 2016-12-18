@@ -155,6 +155,10 @@
         <tool.build.date>${maven.build.timestamp}</tool.build.date>
     </properties>
 
+	<prerequisites>
+		<maven>2.3</maven>
+	</prerequisites>
+
     <dependencies>
         <dependency>
             <groupId>net.sf.saxon</groupId>
