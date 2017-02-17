@@ -40,6 +40,7 @@ import com.adobe.epubcheck.ocf.OCFPackage;
 import com.adobe.epubcheck.ocf.OCFZipPackage;
 import com.adobe.epubcheck.opf.ContentChecker;
 import com.adobe.epubcheck.util.CheckUtil;
+import com.adobe.epubcheck.util.FeatureEnum;
 
 public class BitmapChecker implements ContentChecker
 {
@@ -79,6 +80,8 @@ public class BitmapChecker implements ContentChecker
     {
       report.message(MessageId.OPF_029, EPUBLocation.create(this.ocf.getName()), path, mimeType);
     }
+    report.info(path, FeatureEnum.IMAGE_TYPE, mimeType);
+    report.info(path, FeatureEnum.IMAGE_MIMETYPE_MISMATCHES_HEADER, "");
   }
 
 
@@ -214,6 +217,9 @@ public class BitmapChecker implements ContentChecker
       this.width = width;
       this.height = height;
       this.length = length;
+      report.info(path, FeatureEnum.IMAGE_WIDTH, Integer.toString(width));
+      report.info(path, FeatureEnum.IMAGE_HEIGHT, Integer.toString(height));
+      report.info(path, FeatureEnum.IMAGE_SIZE, Long.toString(length));
     }
   }
 

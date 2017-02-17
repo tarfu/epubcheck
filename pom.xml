@@ -126,6 +126,11 @@
             <id>skoji</id>
             <email>skoji@mac.com</email>
         </developer>
+        <developer>
+            <name>Tobias Breitwieser</name>
+            <id>tobiasbreitwieser</id>
+            <email>tobias@breitwieser.biz</email>
+        </developer>
     </developers>
     <mailingLists>
         <mailingList>
