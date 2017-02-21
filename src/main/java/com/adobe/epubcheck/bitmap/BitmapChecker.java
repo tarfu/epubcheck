@@ -81,7 +81,9 @@ public class BitmapChecker implements ContentChecker
       report.message(MessageId.OPF_029, EPUBLocation.create(this.ocf.getName()), path, mimeType);
     }
     report.info(path, FeatureEnum.IMAGE_TYPE, mimeType);
-    report.info(path, FeatureEnum.IMAGE_MIMETYPE_MISMATCHES_HEADER, "");
+    if(!passed) {
+      report.info(path, FeatureEnum.IMAGE_MIMETYPE_MISMATCHES_HEADER, "");
+    }
   }
 
 
