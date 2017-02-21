@@ -43,6 +43,7 @@ public class CSSHandler implements CssContentHandler, CssErrorHandler
   boolean inFontFace = false;
   boolean hasFontFaceDeclarations = false;
   boolean inKeyFrames = false;
+  boolean inMedia = false;
   CssAtRule atRule = null;
 
   public CSSHandler(String path, XRefChecker xrefChecker, Report report,
@@ -158,6 +159,8 @@ public class CSSHandler implements CssContentHandler, CssErrorHandler
     else if (keyframesPattern.matcher(ruleName).matches())
     {
       inKeyFrames=true;
+    }else if (ruleName.equals("@media")){
+      inMedia=true;
     }
   }
 
@@ -177,6 +180,10 @@ public class CSSHandler implements CssContentHandler, CssErrorHandler
     if (inKeyFrames)
     {
       inKeyFrames = false;
+    }
+    if(inMedia){
+      inMedia = false;
+      report.info(path, FeatureEnum.HAS_MEDIATAGS, atRule.toCssString());
     }
     atRule = null;
   }

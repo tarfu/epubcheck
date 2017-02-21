@@ -51,6 +51,7 @@ public enum FeatureEnum
   HAS_FIXED_LAYOUT("hasFixedLayout"),
   HAS_HTML4("html 4"),
   HAS_HTML5("html 5"),
+  HAS_MEDIATAGS("hasMediaTags"),
   HAS_MICRODATA("microdata"),
   HAS_NCX("Has ncx file"),
   HAS_RDFA("RDFa"),
