@@ -183,7 +183,7 @@ public class CSSHandler implements CssContentHandler, CssErrorHandler
     }
     if(inMedia){
       inMedia = false;
-      report.info(path, FeatureEnum.HAS_MEDIATAGS, atRule.toCssString());
+      report.info(path, FeatureEnum.HAS_MEDIATAG, atRule.toCssString());
     }
     atRule = null;
   }
